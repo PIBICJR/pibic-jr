@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06140e">
+  <title>Um ciclo, muitos caminhos | PIBIC Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/meses.css">
+  <link rel="stylesheet" href="css/configuracoes.css">
+  <script src="js/meses-data.js" defer></script>
+  <script src="js/mes-pagina.js" defer></script>
+  <script src="js/configuracoes.js" defer></script>
+</head>
+<body class="month-page" data-month-index="11">
+  <header class="month-topbar">
+    <div class="topbar-inner">
+      <div class="left">
+        <a href="linha-do-tempo.html" class="month-back">← ÁRVORE DE HABILIDADES</a>
+        <a href="index.html" class="month-tree-link">INÍCIO</a>
+      </div>
+      <div class="right">
+        
+  <div class="site-settings" id="siteSettings">
+    <button class="settings-trigger" id="settingsTrigger" type="button" aria-label="Abrir configurações do site" aria-expanded="false" aria-controls="settingsPanel" title="Configurações">
+      <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2 2-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1 1.57V21h-2.8v-.09a1.7 1.7 0 0 0-1-1.57 1.7 1.7 0 0 0-1.88.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 7.52 15a1.7 1.7 0 0 0-1.57-1H6v-2.8h.09a1.7 1.7 0 0 0 1.57-1 1.7 1.7 0 0 0-.34-1.88l-.06-.06 2-2 .06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1-1.57V5h2.8v.09a1.7 1.7 0 0 0 1 1.57 1.7 1.7 0 0 0 1.88-.34l.06-.06 2 2-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.57 1H21V14h-.09a1.7 1.7 0 0 0-1.51 1Z"/></svg>
+    </button>
+    <section class="settings-panel" id="settingsPanel" aria-label="Configurações do site" hidden>
+      <div class="settings-heading"><div><span class="settings-kicker">PREFERÊNCIAS</span><h2>Configurações<span class="settings-accent">.</span></h2></div><button id="settingsClose" class="settings-close" type="button" aria-label="Fechar configurações">×</button></div>
+      <div class="settings-group"><p class="settings-label">APARÊNCIA</p><p class="settings-description">Escolha o visual de todas as páginas.</p>
+        <div class="theme-options" role="group" aria-label="Escolher tema">
+          <button class="theme-option" id="themeLight" type="button" aria-pressed="false"><span aria-hidden="true">◯</span> Claro</button>
+          <button class="theme-option" id="themeDark" type="button" aria-pressed="true"><span aria-hidden="true">◐</span> Escuro</button>
+        </div>
+      </div>
+      <div class="settings-group settings-effects-group"><div><p class="settings-label">EFEITOS VISUAIS</p><p class="settings-description">Folhas, partículas, animações e movimento do fundo.</p></div><button id="settingsEffects" class="settings-switch" type="button" role="switch" aria-checked="true" aria-label="Ativar efeitos visuais"><span></span></button></div>
+      <p class="settings-footnote">Suas escolhas são guardadas neste navegador e aplicadas em todas as páginas do site.</p>
+    </section>
+  </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="month-shell">
+    <section class="month-hero">
+      <article class="month-card">
+        <div class="month-kicker" id="monthKicker">MÊS 00</div>
+        <div class="month-status"><span class="month-status-dot"></span> <span id="monthStatusLabel">Carregando</span></div>
+        <h1 class="month-title" id="monthTitle">Carregando <em>mês</em></h1>
+        <p class="month-intro" id="monthIntro"></p>
+        <div class="month-mini-grid" id="monthHighlights"></div>
+      </article>
+      <aside class="month-side">
+        <section class="month-panel">
+          <p class="eyebrow">VISÃO GERAL</p>
+          <h3>Resumo da etapa</h3>
+          <p id="monthSummary"></p>
+        </section>
+        <section class="month-panel">
+          <p class="eyebrow">PROGRESSO</p>
+          <h3 id="monthNumberBadge">00 / 12</h3>
+          <p id="monthProgressInfo"></p>
+        </section>
+        <section class="month-panel">
+          <p class="eyebrow">STATUS DO CAPÍTULO</p>
+          <h3 id="monthProjectTag">Etapa</h3>
+          <p>Esta página faz parte da jornada mensal do PIBIC Jr. e está conectada ao sistema de desbloqueio da árvore principal.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="month-content-grid">
+      <div class="month-article" id="monthSections"></div>
+      <aside id="monthAside"></aside>
+    </section>
+
+    <section class="month-complete-box">
+      <div>
+        <strong>Concluir esta leitura</strong>
+        <p id="completeHelp">Carregando informações do progresso.</p>
+      </div>
+      <button type="button" class="month-complete-button" id="completeMonthButton">CARREGANDO</button>
+    </section>
+  </main>
+
+  <footer class="month-footer">
+    <div class="month-footer-copy"><strong>PIBIC<span>.JR</span></strong><p>Plantas Medicinais: do Conhecimento Popular ao Científico</p><small>Escola Estadual Dr. Sidrônio Augusto de Santa Maria</small></div>
+    <div class="month-footer-logo"><img src="assets/logo-escola.png" alt="Espaço reservado ao logotipo da escola" onerror="this.style.display='none'"><small>IDENTIDADE VISUAL DA ESCOLA</small></div>
+  </footer>
+
+  <div class="month-toast" id="monthToast" role="status" aria-live="polite"></div>
+</body>
+</html>

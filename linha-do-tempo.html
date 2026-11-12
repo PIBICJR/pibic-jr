@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06140e">
+  <meta name="description" content="Explore os doze meses do PIBIC Jr. em uma árvore botânica de descobertas interativa.">
+  <title>Árvore de Descobertas | PIBIC Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/linha-do-tempo.css">
+  <link rel="stylesheet" href="css/meses.css">
+  <link rel="stylesheet" href="css/configuracoes.css">
+  <script src="js/meses-data.js" defer></script>
+  <script src="js/linha-do-tempo.js" defer></script>
+  <script src="js/configuracoes.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="leaf-field" id="leafField" aria-hidden="true"></div>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Voltar à página inicial">
+      <span class="brand-symbol">✳</span>
+      <span class="brand-word">PIBIC<span>.JR</span><small>CIÊNCIA & NATUREZA</small></span>
+    </a>
+    <nav aria-label="Navegação principal" class="header-actions">
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> VOLTAR AO INÍCIO</a>
+      <a class="back-link" href="plantas.html">HERBÁRIO DIGITAL ↗</a>
+    </nav>
+    
+  <div class="site-settings" id="siteSettings">
+    <button class="settings-trigger" id="settingsTrigger" type="button" aria-label="Abrir configurações do site" aria-expanded="false" aria-controls="settingsPanel" title="Configurações">
+      <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2 2-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1 1.57V21h-2.8v-.09a1.7 1.7 0 0 0-1-1.57 1.7 1.7 0 0 0-1.88.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 7.52 15a1.7 1.7 0 0 0-1.57-1H6v-2.8h.09a1.7 1.7 0 0 0 1.57-1 1.7 1.7 0 0 0-.34-1.88l-.06-.06 2-2 .06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1-1.57V5h2.8v.09a1.7 1.7 0 0 0 1 1.57 1.7 1.7 0 0 0 1.88-.34l.06-.06 2 2-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.57 1H21V14h-.09a1.7 1.7 0 0 0-1.51 1Z"/></svg>
+    </button>
+    <section class="settings-panel" id="settingsPanel" aria-label="Configurações do site" hidden>
+      <div class="settings-heading"><div><span class="settings-kicker">PREFERÊNCIAS</span><h2>Configurações<span class="settings-accent">.</span></h2></div><button id="settingsClose" class="settings-close" type="button" aria-label="Fechar configurações">×</button></div>
+      <div class="settings-group"><p class="settings-label">APARÊNCIA</p><p class="settings-description">Escolha o visual de todas as páginas.</p>
+        <div class="theme-options" role="group" aria-label="Escolher tema">
+          <button class="theme-option" id="themeLight" type="button" aria-pressed="false"><span aria-hidden="true">◯</span> Claro</button>
+          <button class="theme-option" id="themeDark" type="button" aria-pressed="true"><span aria-hidden="true">◐</span> Escuro</button>
+        </div>
+      </div>
+      <div class="settings-group settings-effects-group"><div><p class="settings-label">EFEITOS VISUAIS</p><p class="settings-description">Folhas, partículas, animações e movimento do fundo.</p></div><button id="settingsEffects" class="settings-switch" type="button" role="switch" aria-checked="true" aria-label="Ativar efeitos visuais"><span></span></button></div>
+      <p class="settings-footnote">Suas escolhas são guardadas neste navegador e aplicadas em todas as páginas do site.</p>
+    </section>
+  </div>
+
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="pageTitle">
+      <div class="eyebrow"><span class="eyebrow-line"></span> JORNADA DA PESQUISA <span class="eyebrow-line"></span></div>
+      <p class="intro-index">01 / 12 — NAVEGAÇÃO POR MESES</p>
+      <h1 id="pageTitle">A árvore continua,<br>mas agora cada mês tem sua <em>própria página.</em></h1>
+      <p class="intro-text">Clique em um nó iluminado para abrir a página do mês correspondente. Ao concluir a leitura, o próximo capítulo será desbloqueado automaticamente.</p>
+      <div class="intro-ctas">
+        <button class="primary-cta" id="startJourney" type="button">ABRIR PRÓXIMO MÊS <span aria-hidden="true">↗</span></button>
+        <a class="quiet-cta" href="#arvore">VER A ÁRVORE <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="intro-decoration" aria-hidden="true">✳</div>
+    </section>
+
+    <section class="dashboard" aria-label="Progresso da exploração">
+      <div class="dashboard-cell"><span class="dashboard-label">MESES CONCLUÍDOS</span><div class="dashboard-value"><span id="completeCount">0</span><small> / 12</small></div></div>
+      <div class="dashboard-cell dashboard-progress"><div class="progress-head"><span class="dashboard-label">SUA EXPLORAÇÃO</span><span id="progressText">0%</span></div><div class="progress-track" role="progressbar" aria-label="Progresso da leitura" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="progressBar"><div class="progress-fill" id="progressFill"></div></div><p>Cada página concluída ilumina a próxima etapa.</p></div>
+      <div class="dashboard-cell"><span class="dashboard-label">JORNADA DO PROJETO</span><div class="dashboard-value">2026 <small>— 2027</small></div></div>
+    </section>
+
+    <section class="tree-section" id="arvore" aria-labelledby="treeTitle">
+      <div class="section-heading"><div><p class="kicker">✳ &nbsp; MAPA DE PROGRESSÃO</p><h2 id="treeTitle">A árvore de <em>descobertas.</em></h2><p>Os nós disponíveis levam a páginas separadas. Os meses futuros continuam marcados como etapas em preparação.</p></div><button class="reset-link" id="resetProgress" type="button">↺ &nbsp; RECOMEÇAR JORNADA</button></div>
+      <div class="legend" aria-label="Legenda da árvore"><span><i class="legend-dot done"></i> CONCLUÍDO</span><span><i class="legend-dot available"></i> DISPONÍVEL</span><span><i class="legend-dot locked"></i> A DESBLOQUEAR</span><span><i class="legend-dot future"></i> EM PREPARAÇÃO</span></div>
+      <div class="tree-frame" id="treeFrame">
+        <div class="tree-topline"><span>MAPA BOTÂNICO / VERSÃO 02</span><span>CLIQUE NOS NÓS ILUMINADOS <span aria-hidden="true">↗</span></span></div>
+        <div class="tree-scroll" tabindex="0" aria-label="Árvore com páginas mensais, role horizontalmente em telas pequenas">
+          <div class="tree-canvas" id="treeCanvas">
+            <div class="tree-glow" aria-hidden="true"></div>
+            <svg class="branch-svg" id="branchSvg" viewBox="0 0 1000 1560" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="branchGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93edaf"/><stop offset="1" stop-color="#2c9562"/></linearGradient><filter id="branchGlow"><feGaussianBlur stdDeviation="5"/></filter></defs><g id="branchBackground"></g><g id="branchActive"></g></svg>
+            <div class="tree-watermark" aria-hidden="true">HERBARIUM / SCIENTIA</div>
+            <div id="skillNodes"></div>
+            <div class="tree-root" aria-hidden="true"><div class="root-emblem">✳</div><div>RAÍZES DO CONHECIMENTO</div><small>JUNHO DE 2026</small></div>
+          </div>
+        </div>
+        <div class="tree-bottomline"><span>✳ &nbsp; UMA PÁGINA POR MÊS</span><span>12 ETAPAS</span></div>
+      </div>
+      <div class="month-link-grid" id="monthLinkGrid" aria-label="Acesso textual às páginas mensais"></div>
+      <p class="future-note">Os meses de novembro de 2026 a maio de 2027 permanecem identificados como etapas previstas, prontos para atualização futura.</p>
+    </section>
+
+    <section class="closing"><span class="closing-symbol" aria-hidden="true">✧</span><p>“O conhecimento popular inspira perguntas.<br>A ciência nos ajuda a investigá-las.”</p><a href="plantas.html" class="herbario-shortcut">HERBÁRIO ↗</a><a href="index.html">CONTINUAR EXPLORANDO O PROJETO <span aria-hidden="true">↗</span></a></section>
+  </main>
+
+  <footer><div class="footer-copy"><strong>PIBIC<span>.JR</span></strong><p>Plantas Medicinais: do Conhecimento Popular ao Científico</p><small>Escola Estadual Dr. Sidrônio Augusto de Santa Maria</small></div><div class="school-logo"><img src="assets/logo-escola.png" alt="Espaço reservado ao logotipo da escola" onerror="this.style.display='none'"><small>IDENTIDADE VISUAL DA ESCOLA</small></div><div class="footer-bottom">PROTÓTIPO DE EXPERIÊNCIA DIGITAL <span>2026 — 2027</span></div></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
