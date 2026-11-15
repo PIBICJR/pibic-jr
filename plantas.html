@@ -1,23 +1,348 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#06130d"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/herbario.css"><link rel="stylesheet" href="css/configuracoes.css"><script src="js/configuracoes.js" defer></script><title>Herbário digital | PIBIC Jr.</title><script src="js/plantas.js" defer></script></head><body><header class="plant-header"><a class="plant-brand" href="index.html"><span class="brand-glyph">✳</span><span>PIBIC<span class="green">.JR</span><small>HERBÁRIO DIGITAL</small></span></a><nav class="plant-nav" aria-label="Navegação principal"><a href="index.html">INÍCIO</a><a href="linha-do-tempo.html">JORNADA</a><a class="nav-current" href="plantas.html">PLANTAS</a></nav><div class="site-settings" id="siteSettings">
-<button aria-controls="settingsPanel" aria-expanded="false" aria-label="Abrir configurações do site" class="settings-trigger" id="settingsTrigger" title="Configurações" type="button">
-<svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="21"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"></path><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2 2-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1 1.57V21h-2.8v-.09a1.7 1.7 0 0 0-1-1.57 1.7 1.7 0 0 0-1.88.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 7.52 15a1.7 1.7 0 0 0-1.57-1H6v-2.8h.09a1.7 1.7 0 0 0 1.57-1 1.7 1.7 0 0 0-.34-1.88l-.06-.06 2-2 .06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1-1.57V5h2.8v.09a1.7 1.7 0 0 0 1 1.57 1.7 1.7 0 0 0 1.88-.34l.06-.06 2 2-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.57 1H21V14h-.09a1.7 1.7 0 0 0-1.51 1Z"></path></svg>
-</button>
-<section aria-label="Configurações do site" class="settings-panel" hidden="" id="settingsPanel">
-<div class="settings-heading"><div><span class="settings-kicker">PREFERÊNCIAS</span><h2>Configurações<span class="settings-accent">.</span></h2></div><button aria-label="Fechar configurações" class="settings-close" id="settingsClose" type="button">×</button></div>
-<div class="settings-group"><p class="settings-label">APARÊNCIA</p><p class="settings-description">Escolha o visual de todas as páginas.</p>
-<div aria-label="Escolher tema" class="theme-options" role="group">
-<button aria-pressed="false" class="theme-option" id="themeLight" type="button"><span aria-hidden="true">◯</span> Claro</button>
-<button aria-pressed="true" class="theme-option" id="themeDark" type="button"><span aria-hidden="true">◐</span> Escuro</button>
-</div>
-</div>
-<div class="settings-group settings-effects-group"><div><p class="settings-label">EFEITOS VISUAIS</p><p class="settings-description">Folhas, partículas, animações e movimento do fundo.</p></div><button aria-checked="true" aria-label="Ativar efeitos visuais" class="settings-switch" id="settingsEffects" role="switch" type="button"><span></span></button></div>
-<p class="settings-footnote">Suas escolhas são guardadas neste navegador e aplicadas em todas as páginas do site.</p>
-</section>
-</div></header>
-<main class="plant-main"><section class="catalog-hero"><div class="eyebrow"><span class="line"></span> ARQUIVO BOTÂNICO / EDIÇÃO EXPERIMENTAL</div><div class="hero-heading"><div><div class="giant-index" aria-hidden="true">01 / HERBARIUM</div><h1>Uma coleção de <em>vida.</em></h1><p>Um espaço para registrar, investigar e apresentar as plantas identificadas ao longo do PIBIC Jr. Explore as espécies em diferentes visualizações e abra seus dossiês interativos.</p></div><div class="hero-stamp" aria-hidden="true"><span>HERBARIUM</span><strong>✳</strong><span>PIBIC JUNIOR</span></div></div><div class="hero-rule"><span>COLEÇÃO EM CONSTRUÇÃO</span><span>SCROLL PARA EXPLORAR ↓</span></div></section>
-<section class="catalog-section" id="acervo"><div class="section-top"><div><p class="tiny">ACERVO / IDENTIFICAÇÃO</p><h2>Espécies do projeto<span class="dot">.</span></h2></div><div class="collection-count"><strong id="count">01</strong><span>PLANTA NO ACERVO</span></div></div>
-<div class="toolbar"><label class="search-box" for="plantSearch"><span class="search-symbol" aria-hidden="true">⌕</span><input id="plantSearch" type="search" placeholder="Pesquisar por nome popular ou científico..." autocomplete="off"><span class="key-hint">BUSCAR</span></label><div class="view-controls" role="group" aria-label="Modo de visualização"><button type="button" data-view="list" aria-label="Visualização em lista" title="Lista"><svg viewBox="0 0 24 24"><path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1"/></svg></button><button type="button" data-view="compact" aria-label="Ícones pequenos" title="Ícones pequenos"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button><button type="button" data-view="grid" aria-label="Ícones médios" title="Ícones médios"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></button><button type="button" data-view="large" aria-label="Ícones grandes" title="Ícones grandes"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></button></div></div>
-<div class="result-summary"><span id="searchStatus" role="status">MOSTRANDO 01 RESULTADO</span><span>ORDENADO POR NOME • A–Z</span></div>
-<div id="plantGrid" class="plant-grid" data-view="grid"><a class="plant-card" href="aroeira.html" data-name="aroeira aroeira-vermelha schinus terebinthifolia anacardiaceae"><div class="plant-art"><img src="assets/aroeira-ilustracao.svg" alt="Ilustração botânica estilizada de aroeira com folhas e frutos vermelhos"><span class="art-corner">ESPÉCIE 001</span></div><div class="plant-card-body"><div class="card-overline">ANACARDIACEAE <span> / 001</span></div><h3>Aroeira</h3><p><i>Schinus terebinthifolia</i> Raddi <span class="verify">IDENTIFICAÇÃO A CONFIRMAR</span></p><div class="card-bottom"><span>DOSSIÊ BOTÂNICO</span><span class="round-arrow" aria-hidden="true">↗</span></div></div></a></div>
-<div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>Nenhuma planta encontrada</h3><p>Tente pesquisar por “Aroeira” ou “Schinus”.</p><button id="clearSearch" type="button">LIMPAR PESQUISA ↗</button></div>
-<p class="catalog-disclaimer"><span>✳</span> Este catálogo apresenta uma espécie-modelo para testar a experiência visual. O nome científico escolhido é uma hipótese de identificação e deve ser confirmado a partir de material botânico do projeto.</p></section></main><footer class="plant-footer"><div><b>PIBIC<span class="green">.JR</span></b><p>Plantas Medicinais: do Conhecimento Popular ao Científico</p><small>Protótipo de catálogo botânico — conteúdo sujeito à validação científica.</small></div><div class="plant-school"><img src="assets/logo-escola.png" alt="Imagem provisória do logotipo escolar"><span>Escola Estadual Dr. Sidrônio Augusto de Santa Maria</span></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#06130d" name="theme-color"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="css/herbario.css" rel="stylesheet"/>
+  <link href="css/configuracoes.css" rel="stylesheet"/>
+  <script defer="" src="js/configuracoes.js">
+  </script>
+  <title>
+   Herb&aacute;rio digital | PIBIC Jr.
+  </title>
+  <script defer="" src="js/plantas.js">
+  </script>
+  <link href="css/logotipo-pibic.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="plant-header">
+   <a class="plant-brand" href="index.html">
+    <img alt="Logotipo PIBIC Jr. Plantas Medicinais" class="brand-logo" loading="eager" src="assets/logotipo-pibic-jr.png"/>
+    <span>
+     PIBIC
+     <span class="green">
+      .JR
+     </span>
+     <small>
+      HERB&Aacute;RIO DIGITAL
+     </small>
+    </span>
+   </a>
+   <nav aria-label="Navega&ccedil;&atilde;o principal" class="plant-nav">
+    <a href="index.html">
+     IN&Iacute;CIO
+    </a>
+    <a href="linha-do-tempo.html">
+     JORNADA
+    </a>
+    <a class="nav-current" href="plantas.html">
+     PLANTAS
+    </a>
+   </nav>
+   <div class="site-settings" id="siteSettings">
+    <button aria-controls="settingsPanel" aria-expanded="false" aria-label="Abrir configura&ccedil;&otilde;es do site" class="settings-trigger" id="settingsTrigger" title="Configura&ccedil;&otilde;es" type="button">
+     <svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="21">
+      <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z">
+      </path>
+      <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2 2-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1 1.57V21h-2.8v-.09a1.7 1.7 0 0 0-1-1.57 1.7 1.7 0 0 0-1.88.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 7.52 15a1.7 1.7 0 0 0-1.57-1H6v-2.8h.09a1.7 1.7 0 0 0 1.57-1 1.7 1.7 0 0 0-.34-1.88l-.06-.06 2-2 .06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1-1.57V5h2.8v.09a1.7 1.7 0 0 0 1 1.57 1.7 1.7 0 0 0 1.88-.34l.06-.06 2 2-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.57 1H21V14h-.09a1.7 1.7 0 0 0-1.51 1Z">
+      </path>
+     </svg>
+    </button>
+    <section aria-label="Configura&ccedil;&otilde;es do site" class="settings-panel" hidden="" id="settingsPanel">
+     <div class="settings-heading">
+      <div>
+       <span class="settings-kicker">
+        PREFER&Ecirc;NCIAS
+       </span>
+       <h2>
+        Configura&ccedil;&otilde;es
+        <span class="settings-accent">
+         .
+        </span>
+       </h2>
+      </div>
+      <button aria-label="Fechar configura&ccedil;&otilde;es" class="settings-close" id="settingsClose" type="button">
+       &times;
+      </button>
+     </div>
+     <div class="settings-group">
+      <p class="settings-label">
+       APAR&Ecirc;NCIA
+      </p>
+      <p class="settings-description">
+       Escolha o visual de todas as p&aacute;ginas.
+      </p>
+      <div aria-label="Escolher tema" class="theme-options" role="group">
+       <button aria-pressed="false" class="theme-option" id="themeLight" type="button">
+        <span aria-hidden="true">
+         &xcirc;
+        </span>
+        Claro
+       </button>
+       <button aria-pressed="true" class="theme-option" id="themeDark" type="button">
+        <span aria-hidden="true">
+         ◐
+        </span>
+        Escuro
+       </button>
+      </div>
+     </div>
+     <div class="settings-group settings-effects-group">
+      <div>
+       <p class="settings-label">
+        EFEITOS VISUAIS
+       </p>
+       <p class="settings-description">
+        Folhas, part&iacute;culas, anima&ccedil;&otilde;es e movimento do fundo.
+       </p>
+      </div>
+      <button aria-checked="true" aria-label="Ativar efeitos visuais" class="settings-switch" id="settingsEffects" role="switch" type="button">
+       <span>
+       </span>
+      </button>
+     </div>
+     <p class="settings-footnote">
+      Suas escolhas s&atilde;o guardadas neste navegador e aplicadas em todas as p&aacute;ginas do site.
+     </p>
+    </section>
+   </div>
+  </header>
+  <main class="plant-main">
+   <section class="catalog-hero">
+    <div class="eyebrow">
+     <span class="line">
+     </span>
+     ARQUIVO BOT&Acirc;NICO / EDI&Ccedil;&Atilde;O EXPERIMENTAL
+    </div>
+    <div class="hero-heading">
+     <div>
+      <div aria-hidden="true" class="giant-index">
+       01 / HERBARIUM
+      </div>
+      <h1>
+       Uma cole&ccedil;&atilde;o de
+       <em>
+        vida.
+       </em>
+      </h1>
+      <p>
+       Um espa&ccedil;o para registrar, investigar e apresentar as plantas identificadas ao longo do PIBIC Jr. Explore as esp&eacute;cies em diferentes visualiza&ccedil;&otilde;es e abra seus dossi&ecirc;s interativos.
+      </p>
+     </div>
+     <div aria-hidden="true" class="hero-stamp">
+      <img alt="Logotipo PIBIC Jr. Plantas Medicinais" class="stamp-project-logo" loading="lazy" src="assets/logotipo-pibic-jr.png"/>
+     </div>
+    </div>
+    <div class="hero-rule">
+     <span>
+      COLE&Ccedil;&Atilde;O EM CONSTRU&Ccedil;&Atilde;O
+     </span>
+     <span>
+      SCROLL PARA EXPLORAR &darr;
+     </span>
+    </div>
+   </section>
+   <section class="catalog-section" id="acervo">
+    <div class="section-top">
+     <div>
+      <p class="tiny">
+       ACERVO / IDENTIFICA&Ccedil;&Atilde;O
+      </p>
+      <h2>
+       Esp&eacute;cies do projeto
+       <span class="dot">
+        .
+       </span>
+      </h2>
+     </div>
+     <div class="collection-count">
+      <strong id="count">
+       02
+      </strong>
+      <span>
+       PLANTAS NO ACERVO
+      </span>
+     </div>
+    </div>
+    <div class="toolbar">
+     <label class="search-box" for="plantSearch">
+      <span aria-hidden="true" class="search-symbol">
+       &telrec;
+      </span>
+      <input autocomplete="off" id="plantSearch" placeholder="Pesquisar por nome popular ou cient&iacute;fico..." type="search"/>
+      <span class="key-hint">
+       BUSCAR
+      </span>
+     </label>
+     <div aria-label="Modo de visualiza&ccedil;&atilde;o" class="view-controls" role="group">
+      <button aria-label="Visualiza&ccedil;&atilde;o em lista" data-view="list" title="Lista" type="button">
+       <svg viewbox="0 0 24 24">
+        <path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1">
+        </path>
+       </svg>
+      </button>
+      <button aria-label="&Iacute;cones pequenos" data-view="compact" title="&Iacute;cones pequenos" type="button">
+       <svg viewbox="0 0 24 24">
+        <rect height="7" rx="1" width="7" x="3" y="3">
+        </rect>
+        <rect height="7" rx="1" width="7" x="14" y="3">
+        </rect>
+        <rect height="7" rx="1" width="7" x="3" y="14">
+        </rect>
+        <rect height="7" rx="1" width="7" x="14" y="14">
+        </rect>
+       </svg>
+      </button>
+      <button aria-label="&Iacute;cones m&eacute;dios" data-view="grid" title="&Iacute;cones m&eacute;dios" type="button">
+       <svg viewbox="0 0 24 24">
+        <rect height="8" rx="1" width="8" x="3" y="3">
+        </rect>
+        <rect height="8" rx="1" width="8" x="13" y="3">
+        </rect>
+        <rect height="8" rx="1" width="8" x="3" y="13">
+        </rect>
+        <rect height="8" rx="1" width="8" x="13" y="13">
+        </rect>
+       </svg>
+      </button>
+      <button aria-label="&Iacute;cones grandes" data-view="large" title="&Iacute;cones grandes" type="button">
+       <svg viewbox="0 0 24 24">
+        <rect height="18" rx="2" width="18" x="3" y="3">
+        </rect>
+       </svg>
+      </button>
+     </div>
+    </div>
+    <div class="result-summary">
+     <span id="searchStatus" role="status">
+      MOSTRANDO 02 RESULTADOS
+     </span>
+     <span>
+      ORDENADO POR NOME &bull; A&ndash;Z
+     </span>
+    </div>
+    <div class="plant-grid" data-view="grid" id="plantGrid">
+     <a class="plant-card" data-name="aroeira aroeira-vermelha schinus terebinthifolia anacardiaceae" href="aroeira.html">
+      <div class="plant-art">
+       <img alt="Ilustra&ccedil;&atilde;o bot&acirc;nica estilizada de aroeira com folhas e frutos vermelhos" src="assets/aroeira-ilustracao.svg"/>
+       <span class="art-corner">
+        ESP&Eacute;CIE 001
+       </span>
+      </div>
+      <div class="plant-card-body">
+       <div class="card-overline">
+        ANACARDIACEAE
+        <span>
+         / 001
+        </span>
+       </div>
+       <h3>
+        Aroeira
+       </h3>
+       <p>
+        <i>
+         Schinus terebinthifolia
+        </i>
+        Raddi
+        <span class="verify">
+         IDENTIFICA&Ccedil;&Atilde;O A CONFIRMAR
+        </span>
+       </p>
+       <div class="card-bottom">
+        <span>
+         DOSSI&Ecirc; BOT&Acirc;NICO
+        </span>
+        <span aria-hidden="true" class="round-arrow">
+         &nearrow;
+        </span>
+       </div>
+      </div>
+     </a>
+     <a class="plant-card" data-name="eucalipto eucalyptus globulus eucaliptus globulus myrtaceae folhas" href="eucalipto.html">
+      <div class="plant-art">
+       <img alt="Ilustra&ccedil;&atilde;o bot&acirc;nica de eucalipto com folhas lanceoladas e c&aacute;psulas" loading="lazy" src="assets/eucalipto-ilustracao.svg"/>
+       <span class="art-corner">
+        ESP&Eacute;CIE 002
+       </span>
+      </div>
+      <div class="plant-card-body">
+       <div class="card-overline">
+        MYRTACEAE
+        <span>
+         / 002
+        </span>
+       </div>
+       <h3>
+        Eucalipto
+       </h3>
+       <p>
+        <i>
+         Eucalyptus globulus
+        </i>
+        Labill.
+        <span class="verify">
+         ESP&Eacute;CIE A CONFIRMAR
+        </span>
+       </p>
+       <div class="card-bottom">
+        <span>
+         DOSSI&Ecirc; BOT&Acirc;NICO
+        </span>
+        <span aria-hidden="true" class="round-arrow">
+         &nearrow;
+        </span>
+       </div>
+      </div>
+     </a>
+    </div>
+    <div class="empty-state" hidden="" id="emptyState">
+     <span>
+      &telrec;
+     </span>
+     <h3>
+      Nenhuma planta encontrada
+     </h3>
+     <p>
+      Tente pesquisar por &ldquo;Eucalipto&rdquo;, &ldquo;Aroeira&rdquo; ou nome cient&iacute;fico.
+     </p>
+     <button id="clearSearch" type="button">
+      LIMPAR PESQUISA &nearrow;
+     </button>
+    </div>
+    <p class="catalog-disclaimer">
+     <span>
+      ✳
+     </span>
+     Acervo experimental com duas esp&eacute;cies-modelo. A identifica&ccedil;&atilde;o das plantas deve ser confirmada pela equipe; as informa&ccedil;&otilde;es sobre uso popular s&atilde;o registros etnobot&acirc;nicos, n&atilde;o recomenda&ccedil;&otilde;es de tratamento.
+    </p>
+   </section>
+  </main>
+  <footer class="plant-footer">
+   <div>
+    <img alt="Logotipo PIBIC Jr. Plantas Medicinais" class="footer-project-logo" loading="lazy" src="assets/logotipo-pibic-jr.png"/>
+    <b>
+     PIBIC
+     <span class="green">
+      .JR
+     </span>
+    </b>
+    <p>
+     Plantas Medicinais: do Conhecimento Popular ao Cient&iacute;fico
+    </p>
+    <small>
+     Prot&oacute;tipo de cat&aacute;logo bot&acirc;nico &mdash; conte&uacute;do sujeito &agrave; valida&ccedil;&atilde;o cient&iacute;fica.
+    </small>
+   </div>
+   <div class="plant-school">
+    <img alt="Imagem provis&oacute;ria do logotipo escolar" src="assets/logo-escola.png"/>
+    <span>
+     Escola Estadual Dr. Sidr&ocirc;nio Augusto de Santa Maria
+    </span>
+   </div>
+  </footer>
+ </body>
+</html>
