@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#06130d" name="theme-color"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="css/herbario.css" rel="stylesheet"/>
+  <link href="css/configuracoes.css" rel="stylesheet"/>
+  <script defer="" src="js/configuracoes.js">
+  </script>
+  <title>
+   Eucalipto | Herb&aacute;rio digital &mdash; PIBIC Jr.
+  </title>
+  <script defer="" src="js/eucalipto-3d.js">
+  </script>
+  <link href="css/logotipo-pibic.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="plant-header">
+   <a class="plant-brand" href="index.html">
+    <img alt="Logotipo PIBIC Jr. Plantas Medicinais" class="brand-logo" loading="eager" src="assets/logotipo-pibic-jr.png"/>
+    <span>
+     PIBIC
+     <span class="green">
+      .JR
+     </span>
+     <small>
+      HERB&Aacute;RIO DIGITAL
+     </small>
+    </span>
+   </a>
+   <nav aria-label="Navega&ccedil;&atilde;o principal" class="plant-nav">
+    <a href="index.html">
+     IN&Iacute;CIO
+    </a>
+    <a href="linha-do-tempo.html">
+     JORNADA
+    </a>
+    <a class="nav-current" href="plantas.html">
+     PLANTAS
+    </a>
+   </nav>
+   <div class="site-settings" id="siteSettings">
+    <button aria-controls="settingsPanel" aria-expanded="false" aria-label="Abrir configura&ccedil;&otilde;es do site" class="settings-trigger" id="settingsTrigger" title="Configura&ccedil;&otilde;es" type="button">
+     <svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="21">
+      <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z">
+      </path>
+      <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2 2-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1 1.57V21h-2.8v-.09a1.7 1.7 0 0 0-1-1.57 1.7 1.7 0 0 0-1.88.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 7.52 15a1.7 1.7 0 0 0-1.57-1H6v-2.8h.09a1.7 1.7 0 0 0 1.57-1 1.7 1.7 0 0 0-.34-1.88l-.06-.06 2-2 .06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1-1.57V5h2.8v.09a1.7 1.7 0 0 0 1 1.57 1.7 1.7 0 0 0 1.88-.34l.06-.06 2 2-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.57 1H21V14h-.09a1.7 1.7 0 0 0-1.51 1Z">
+      </path>
+     </svg>
+    </button>
+    <section aria-label="Configura&ccedil;&otilde;es do site" class="settings-panel" hidden="" id="settingsPanel">
+     <div class="settings-heading">
+      <div>
+       <span class="settings-kicker">
+        PREFER&Ecirc;NCIAS
+       </span>
+       <h2>
+        Configura&ccedil;&otilde;es
+        <span class="settings-accent">
+         .
+        </span>
+       </h2>
+      </div>
+      <button aria-label="Fechar configura&ccedil;&otilde;es" class="settings-close" id="settingsClose" type="button">
+       &times;
+      </button>
+     </div>
+     <div class="settings-group">
+      <p class="settings-label">
+       APAR&Ecirc;NCIA
+      </p>
+      <p class="settings-description">
+       Escolha o visual de todas as p&aacute;ginas.
+      </p>
+      <div aria-label="Escolher tema" class="theme-options" role="group">
+       <button aria-pressed="false" class="theme-option" id="themeLight" type="button">
+        <span aria-hidden="true">
+         &xcirc;
+        </span>
+        Claro
+       </button>
+       <button aria-pressed="true" class="theme-option" id="themeDark" type="button">
+        <span aria-hidden="true">
+         ◐
+        </span>
+        Escuro
+       </button>
+      </div>
+     </div>
+     <div class="settings-group settings-effects-group">
+      <div>
+       <p class="settings-label">
+        EFEITOS VISUAIS
+       </p>
+       <p class="settings-description">
+        Folhas, part&iacute;culas, anima&ccedil;&otilde;es e movimento do fundo.
+       </p>
+      </div>
+      <button aria-checked="true" aria-label="Ativar efeitos visuais" class="settings-switch" id="settingsEffects" role="switch" type="button">
+       <span>
+       </span>
+      </button>
+     </div>
+     <p class="settings-footnote">
+      Suas escolhas s&atilde;o guardadas neste navegador e aplicadas em todas as p&aacute;ginas do site.
+     </p>
+    </section>
+   </div>
+  </header>
+  <main class="plant-main detail-main">
+   <div class="crumb">
+    <a href="plantas.html">
+     &larr; VOLTAR AO ACERVO
+    </a>
+    <span>
+     HERB&Aacute;RIO / ESP&Eacute;CIE 002
+    </span>
+   </div>
+   <section class="detail-hero">
+    <div class="detail-title">
+     <div class="eyebrow">
+      <span class="line">
+      </span>
+      DOSSI&Ecirc; BOT&Acirc;NICO / 002
+     </div>
+     <h1>
+      Eucalipto
+      <span class="dot">
+       .
+      </span>
+     </h1>
+     <p class="scientific">
+      <i>
+       Eucalyptus globulus
+      </i>
+      Labill.
+     </p>
+     <span class="taxon-note">
+      IDENTIFICA&Ccedil;&Atilde;O A CONFIRMAR NO PROJETO
+     </span>
+     <p class="detail-lead">
+      &Aacute;rvore da fam&iacute;lia Myrtaceae, origin&aacute;ria da Austr&aacute;lia, conhecida pelas folhas arom&aacute;ticas e pela presen&ccedil;a de &oacute;leos essenciais. Explore uma representa&ccedil;&atilde;o tridimensional de seu porte e das folhas alongadas.
+     </p>
+     <div class="detail-pills">
+      <span>
+       MYRTACEAE
+      </span>
+      <span>
+       &Aacute;RVORE
+      </span>
+      <span>
+       FOLHAS AROM&Aacute;TICAS
+      </span>
+      <span>
+       REGISTRO 002
+      </span>
+     </div>
+    </div>
+    <div class="detail-side">
+     <span>
+      HERBARIUM &mdash; 002
+     </span>
+     <img alt="Logotipo do PIBIC Jr." class="detail-project-logo" loading="lazy" src="assets/logotipo-pibic-jr.png"/>
+     <span>
+      PLANTAS MEDICINAIS
+     </span>
+    </div>
+   </section>
+   <section aria-labelledby="modelTitle" class="model-section">
+    <div class="model-top">
+     <div>
+      <p class="tiny">
+       LABORAT&Oacute;RIO VISUAL / EXPERIMENTO 02
+      </p>
+      <h2 id="modelTitle">
+       Eucalipto em
+       <em>
+        tr&ecirc;s dimens&otilde;es.
+       </em>
+      </h2>
+     </div>
+     <span class="model-badge">
+      MODELO PROCEDURAL &bull; ILUSTRATIVO
+     </span>
+    </div>
+    <div class="model-layout">
+     <div class="model-stage">
+      <div class="model-stage-top">
+       <span>
+        VISUALIZA&Ccedil;&Atilde;O BOT&Acirc;NICA
+       </span>
+       <span class="live-dot">
+        ● INTERATIVO
+       </span>
+      </div>
+      <canvas aria-label="Modelo 3D estilizado do eucalipto com tronco e ramos com folhas alongadas. Arraste para girar." id="plant3d">
+      </canvas>
+      <div class="stage-hint">
+       ARRASTE PARA GIRAR
+       <span>
+        &middot;
+       </span>
+       ROLE PARA APROXIMAR
+      </div>
+      <div class="stage-corner">
+       3D / EUCALYPTUS STUDY
+      </div>
+     </div>
+     <aside class="model-tools">
+      <div class="tool-index">
+       02 / VISUALIZADOR
+      </div>
+      <h3>
+       Observe o
+       <span class="dot">
+        eucalipto.
+       </span>
+      </h3>
+      <p>
+       Explore o tronco, os ramos e a forma lanceolada das folhas neste modelo de estudo. A apar&ecirc;ncia n&atilde;o substitui uma fotografia ou exsicata real.
+      </p>
+      <div class="tool-controls">
+       <button aria-pressed="true" id="autoRotate" type="button">
+        <span>
+         &orarr;
+        </span>
+        ROTA&Ccedil;&Atilde;O AUTOM&Aacute;TICA
+        <strong id="rotationState">
+         ATIVA
+        </strong>
+       </button>
+       <button id="resetCamera" type="button">
+        <span>
+         &target;
+        </span>
+        REDEFINIR C&Acirc;MERA
+        <strong>
+         &nearrow;
+        </strong>
+       </button>
+      </div>
+      <div class="zoom-row">
+       <button aria-label="Diminuir zoom" id="zoomOut" type="button">
+        &minus;
+       </button>
+       <span>
+        CONTROLE DE ZOOM
+       </span>
+       <button aria-label="Aumentar zoom" id="zoomIn" type="button">
+        +
+       </button>
+      </div>
+      <div class="model-notice">
+       <span>
+        ⓘ
+       </span>
+       <p>
+        Modelo 3D
+        <strong>
+         art&iacute;stico e esquem&aacute;tico
+        </strong>
+        , criado em JavaScript. N&atilde;o representa uma digitaliza&ccedil;&atilde;o nem confirma a esp&eacute;cie identificada pelo grupo.
+       </p>
+      </div>
+     </aside>
+    </div>
+   </section>
+   <section class="info-section" id="informacoes">
+    <div class="section-top">
+     <div>
+      <p class="tiny">
+       ANOTA&Ccedil;&Otilde;ES DO HERB&Aacute;RIO
+      </p>
+      <h2>
+       Conhecendo o
+       <em>
+        eucalipto
+       </em>
+       <span class="dot">
+        .
+       </span>
+      </h2>
+     </div>
+     <span class="info-code">
+      REGISTRO 002 / PROT&Oacute;TIPO
+     </span>
+    </div>
+    <div class="info-grid">
+     <article class="info-card">
+      <span class="info-num">
+       01 / IDENTIFICA&Ccedil;&Atilde;O
+      </span>
+      <h3>
+       Classifica&ccedil;&atilde;o bot&acirc;nica
+      </h3>
+      <dl>
+       <div>
+        <dt>
+         Nome popular
+        </dt>
+        <dd>
+         Eucalipto
+        </dd>
+       </div>
+       <div>
+        <dt>
+         Nome cient&iacute;fico
+        </dt>
+        <dd>
+         <i>
+          Eucalyptus globulus
+         </i>
+         Labill. (a confirmar)
+        </dd>
+       </div>
+       <div>
+        <dt>
+         Fam&iacute;lia
+        </dt>
+        <dd>
+         Myrtaceae
+        </dd>
+       </div>
+       <div>
+        <dt>
+         Origem
+        </dt>
+        <dd>
+         Austr&aacute;lia
+        </dd>
+       </div>
+      </dl>
+      <p class="euca-note">
+       O texto fornecido utiliza a grafia &ldquo;Eucalvptus gl&oacute;bulos&rdquo;; aqui foi adotada a grafia taxon&ocirc;mica usual
+       <i>
+        Eucalyptus globulus
+       </i>
+       .
+      </p>
+     </article>
+     <article class="info-card">
+      <span class="info-num">
+       02 / MORFOLOGIA
+      </span>
+      <h3>
+       Caracter&iacute;sticas
+      </h3>
+      <p>
+       &Aacute;rvore de grande porte, que pode alcan&ccedil;ar alturas elevadas em condi&ccedil;&otilde;es favor&aacute;veis. As folhas adultas s&atilde;o resistentes e alongadas, com gl&acirc;ndulas produtoras de &oacute;leo essencial; o aroma caracter&iacute;stico est&aacute; associado, entre outros compostos, ao 1,8-cineol, conhecido como eucaliptol. Os frutos s&atilde;o c&aacute;psulas lenhosas.
+      </p>
+     </article>
+     <article class="info-card">
+      <span class="info-num">
+       03 / PARTES
+      </span>
+      <h3>
+       Partes utilizadas nos relatos
+      </h3>
+      <p>
+       As anota&ccedil;&otilde;es fornecidas destacam principalmente as
+       <strong>
+        folhas dos ramos adultos
+       </strong>
+       , incluindo formas secas e prepara&ccedil;&otilde;es com a ess&ecirc;ncia de eucalipto. A &eacute;poca e o m&eacute;todo de coleta registrados s&atilde;o dados do material de estudo, n&atilde;o uma orienta&ccedil;&atilde;o pr&aacute;tica de preparo.
+      </p>
+     </article>
+     <article class="info-card">
+      <span class="info-num">
+       04 / AROMA E AMBIENTES
+      </span>
+      <h3>
+       Uso dom&eacute;stico relatado
+      </h3>
+      <p>
+       O material descreve o emprego das folhas e do aroma de eucalipto para perfumar ambientes. Tamb&eacute;m menciona formas tradicionais de libera&ccedil;&atilde;o do aroma por aquecimento. Isso n&atilde;o estabelece seguran&ccedil;a ou efic&aacute;cia terap&ecirc;utica dessas pr&aacute;ticas.
+      </p>
+     </article>
+    </div>
+    <div class="euca-traditions">
+     <div class="section-top">
+      <div>
+       <p class="tiny">
+        ETNOBOT&Acirc;NICA / REGISTROS
+       </p>
+       <h2>
+        Prepara&ccedil;&otilde;es
+        <em>
+         tradicionais relatadas
+        </em>
+        <span class="dot">
+         .
+        </span>
+       </h2>
+      </div>
+      <span class="info-code">
+       TRANSCRI&Ccedil;&Atilde;O RESUMIDA DAS ANOTA&Ccedil;&Otilde;ES
+      </span>
+     </div>
+     <p class="euca-intro">
+      As refer&ecirc;ncias abaixo resumem os usos populares mencionados nas imagens que voc&ecirc; enviou.
+      <strong>
+       N&atilde;o s&atilde;o receitas, indica&ccedil;&otilde;es cl&iacute;nicas nem comprova&ccedil;&atilde;o de efic&aacute;cia.
+      </strong>
+     </p>
+     <div class="euca-uses">
+      <article>
+       <span>
+        01
+       </span>
+       <h3>
+        Asma
+       </h3>
+       <p>
+        As folhas e a ess&ecirc;ncia aparecem em relatos de tinturas e inala&ccedil;&otilde;es voltadas a problemas respirat&oacute;rios.
+       </p>
+      </article>
+      <article>
+       <span>
+        02
+       </span>
+       <h3>
+        Boca / estomatite
+       </h3>
+       <p>
+        Men&ccedil;&atilde;o ao emprego tradicional de l&iacute;quidos obtidos de folhas em bochechos.
+       </p>
+      </article>
+      <article>
+       <span>
+        03
+       </span>
+       <h3>
+        Br&ocirc;nquios
+       </h3>
+       <p>
+        Registros de infus&otilde;es e decoc&ccedil;&otilde;es com folhas, por vezes associadas a outros ingredientes, para desconfortos respirat&oacute;rios.
+       </p>
+      </article>
+      <article>
+       <span>
+        04
+       </span>
+       <h3>
+        Est&ocirc;mago / dispepsia
+       </h3>
+       <p>
+        Relato hist&oacute;rico de macera&ccedil;&otilde;es e elixires caseiros associados ao desconforto digestivo.
+       </p>
+      </article>
+      <article>
+       <span>
+        05
+       </span>
+       <h3>
+        Febre
+       </h3>
+       <p>
+        Uso popular de prepara&ccedil;&otilde;es com folhas e ess&ecirc;ncia em tentativas de aliviar sintomas.
+       </p>
+      </article>
+      <article>
+       <span>
+        06
+       </span>
+       <h3>
+        Febre mal&aacute;rica
+       </h3>
+       <p>
+        O material menciona um &ldquo;vinho medicinal&rdquo; tradicional. Essa pr&aacute;tica n&atilde;o trata a mal&aacute;ria e n&atilde;o deve substituir diagn&oacute;stico e tratamento m&eacute;dico urgente.
+       </p>
+      </article>
+      <article>
+       <span>
+        07
+       </span>
+       <h3>
+        Garganta
+       </h3>
+       <p>
+        Registros de gargarejos e infus&otilde;es tradicionalmente relacionados ao desconforto na garganta.
+       </p>
+      </article>
+      <article>
+       <span>
+        08
+       </span>
+       <h3>
+        Gripe
+       </h3>
+       <p>
+        Refer&ecirc;ncia a decoc&ccedil;&otilde;es de folhas utilizadas popularmente em sintomas respirat&oacute;rios.
+       </p>
+      </article>
+      <article>
+       <span>
+        09
+       </span>
+       <h3>
+        Resfriado
+       </h3>
+       <p>
+        Men&ccedil;&otilde;es a infus&otilde;es, decoc&ccedil;&otilde;es e produtos arom&aacute;ticos empregados popularmente no desconforto causado por resfriados.
+       </p>
+      </article>
+      <article>
+       <span>
+        10
+       </span>
+       <h3>
+        Tosse
+       </h3>
+       <p>
+        Relatos de infus&otilde;es, decoc&ccedil;&otilde;es e tinturas com folhas, al&eacute;m de produtos que cont&ecirc;m &oacute;leo essencial.
+       </p>
+      </article>
+      <article>
+       <span>
+        11
+       </span>
+       <h3>
+        Ulcera&ccedil;&otilde;es e chagas
+       </h3>
+       <p>
+        Registro de aplica&ccedil;&atilde;o tradicional de l&iacute;quidos de folhas para limpeza da pele. A seguran&ccedil;a em feridas n&atilde;o est&aacute; estabelecida por essas anota&ccedil;&otilde;es.
+       </p>
+      </article>
+     </div>
+    </div>
+    <div class="verification">
+     <div>
+      <span>
+       SEGURAN&Ccedil;A E VALIDA&Ccedil;&Atilde;O
+      </span>
+      <h3>
+       Uso tradicional n&atilde;o equivale a tratamento comprovado
+      </h3>
+      <p>
+       O &oacute;leo essencial concentrado de eucalipto pode causar intoxica&ccedil;&atilde;o se ingerido e irrita&ccedil;&atilde;o por contato ou inala&ccedil;&atilde;o. N&atilde;o se deve improvisar prepara&ccedil;&otilde;es para asma, febre, mal&aacute;ria, feridas ou outras condi&ccedil;&otilde;es. A identifica&ccedil;&atilde;o bot&acirc;nica e as alega&ccedil;&otilde;es medicinais precisam de verifica&ccedil;&atilde;o cient&iacute;fica. Em caso de sintomas graves ou suspeita de mal&aacute;ria, procure atendimento de sa&uacute;de.
+      </p>
+     </div>
+     <a href="plantas.html">
+      VOLTAR &Agrave; COLE&Ccedil;&Atilde;O &nearrow;
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="plant-footer">
+   <div>
+    <img alt="Logotipo PIBIC Jr. Plantas Medicinais" class="footer-project-logo" loading="lazy" src="assets/logotipo-pibic-jr.png"/>
+    <b>
+     PIBIC
+     <span class="green">
+      .JR
+     </span>
+    </b>
+    <p>
+     Plantas Medicinais: do Conhecimento Popular ao Cient&iacute;fico
+    </p>
+    <small>
+     Prot&oacute;tipo de cat&aacute;logo bot&acirc;nico &mdash; conte&uacute;do sujeito &agrave; valida&ccedil;&atilde;o cient&iacute;fica.
+    </small>
+   </div>
+   <div class="plant-school">
+    <img alt="Imagem provis&oacute;ria do logotipo escolar" src="assets/logo-escola.png"/>
+    <span>
+     Escola Estadual Dr. Sidr&ocirc;nio Augusto de Santa Maria
+    </span>
+   </div>
+  </footer>
+ </body>
+</html>
