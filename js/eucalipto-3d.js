@@ -143,19 +143,19 @@
     const shapes = [];
     const line = (a, b, width, color) => shapes.push({ kind: 'line', a, b, width, color });
 
-    function addLeafSpray(base, dir, scale = 1, count = 4) {
+    function addLeafSpray(base, dir, scale = 1, count = 3) {
       const tangent = normalize(dir);
       for (let i = 0; i < count; i++) {
-        const offset = add(base, V(jitter(0.15 * scale), jitter(0.22 * scale), jitter(0.14 * scale)));
+        const offset = add(base, V(jitter(0.12 * scale), jitter(0.16 * scale), jitter(0.10 * scale)));
         const side = i % 2 === 0 ? 1 : -1;
         const sway = V(
-          tangent[0] * (0.55 + rnd() * 0.55) + side * (0.25 + rnd() * 0.22),
-          tangent[1] * (0.55 + rnd() * 0.48) + jitter(0.18),
-          tangent[2] * (0.35 + rnd() * 0.25) + side * (0.10 + rnd() * 0.10)
+          tangent[0] * (0.48 + rnd() * 0.42) + side * (0.18 + rnd() * 0.16),
+          tangent[1] * (0.46 + rnd() * 0.34) + jitter(0.12),
+          tangent[2] * (0.28 + rnd() * 0.20) + side * (0.08 + rnd() * 0.06)
         );
-        const tip = add(offset, mul(normalize(sway), 0.75 * scale + rnd() * 0.45 * scale));
-        buildLeafShapes(shapes, offset, tip, (0.06 + rnd() * 0.03) * scale, i + Math.floor(rnd() * 5), side * (0.06 + rnd() * 0.08));
-        line(offset, mix(offset, tip, 0.14), 0.0045 * scale, '#c6b162');
+        const tip = add(offset, mul(normalize(sway), 0.55 * scale + rnd() * 0.22 * scale));
+        buildLeafShapes(shapes, offset, tip, (0.052 + rnd() * 0.018) * scale, i + Math.floor(rnd() * 4), side * (0.04 + rnd() * 0.05));
+        line(offset, mix(offset, tip, 0.13), 0.004 * scale, '#c6b162');
       }
     }
 
@@ -163,69 +163,75 @@
       for (let i = 0; i < count; i++) {
         const theta = rnd() * Math.PI * 2;
         const phi = Math.acos(1 - 2 * rnd());
-        const spread = radius * (0.35 + rnd() * 0.75);
-        const base = add(center, V(Math.cos(theta) * Math.sin(phi) * spread, Math.cos(phi) * spread * 0.7, Math.sin(theta) * Math.sin(phi) * spread * 0.7));
+        const spread = radius * (0.30 + rnd() * 0.55);
+        const base = add(center, V(
+          Math.cos(theta) * Math.sin(phi) * spread,
+          Math.cos(phi) * spread * 0.62,
+          Math.sin(theta) * Math.sin(phi) * spread * 0.62
+        ));
         const dir = normalize(sub(base, center));
-        addLeafSpray(base, add(dir, V(jitter(0.25), 0.25 + rnd() * 0.25, jitter(0.2))), 0.85 + rnd() * 0.35, 3 + Math.floor(rnd() * 3));
+        addLeafSpray(base, add(dir, V(jitter(0.18), 0.18 + rnd() * 0.15, jitter(0.14))), 0.72 + rnd() * 0.18, 2 + Math.floor(rnd() * 2));
       }
     }
 
     function growBranch(start, direction, length, depth, thickness) {
-      const segments = Math.max(2, Math.round(length * 1.3));
+      const segments = Math.max(2, Math.round(length * 1.15));
       let current = start;
       let dir = normalize(direction);
       for (let i = 0; i < segments; i++) {
         const t = (i + 1) / segments;
-        const bend = V(jitter(0.10) * (1 - t), 0.18 * (1 - depth * 0.12), jitter(0.08));
+        const bend = V(jitter(0.08) * (1 - t), 0.13 * (1 - depth * 0.10), jitter(0.06));
         dir = normalize(add(dir, bend));
         const next = add(current, mul(dir, length / segments));
-        line(current, next, Math.max(0.006, thickness * (1 - t * 0.72)), depth <= 1 ? '#83623c' : depth <= 3 ? '#8f6f45' : '#9a7b4f');
-        if (depth >= 3 && i > 0 && i % 2 === 0) addLeafSpray(next, dir, 0.85 + depth * 0.05, 3 + (i % 3));
+        line(current, next, Math.max(0.008, thickness * (1 - t * 0.66)), depth <= 1 ? '#755536' : depth <= 3 ? '#856542' : '#93714b');
+        if (depth >= 3 && i > 0 && i % 2 === 0) addLeafSpray(next, dir, 0.70 + depth * 0.04, 2 + (i % 2));
         current = next;
       }
-      if (depth >= 1) addCanopyCluster(current, 0.45 + depth * 0.08, 5 + depth * 2);
+      if (depth >= 1) addCanopyCluster(current, 0.34 + depth * 0.07, 3 + depth);
       if (depth <= 0) return;
-      const branches = depth >= 4 ? 3 : 2;
+      const branches = depth >= 4 ? 2 : 2;
       for (let i = 0; i < branches; i++) {
-        const angle = (i - (branches - 1) / 2) * (0.42 + rnd() * 0.18);
-        const childDir = normalize(add(dir, V(angle + jitter(0.16), 0.30 + rnd() * 0.26, jitter(0.34))));
-        growBranch(current, childDir, length * (0.58 + rnd() * 0.18), depth - 1, thickness * 0.64);
+        const angle = (i - (branches - 1) / 2) * (0.38 + rnd() * 0.12);
+        const childDir = normalize(add(dir, V(angle + jitter(0.12), 0.22 + rnd() * 0.18, jitter(0.24))));
+        growBranch(current, childDir, length * (0.55 + rnd() * 0.14), depth - 1, thickness * 0.66);
       }
     }
 
-    // trunk and main scaffold
-    const trunk = [V(0, -2.65, 0), V(0.02, -1.75, 0.02), V(0.06, -0.75, 0.04), V(0.08, 0.35, 0.02), V(0.10, 1.55, 0.00), V(0.08, 2.45, -0.02)];
+    // tronco principal mais grosso
+    const trunk = [V(0, -2.70, 0), V(0.03, -1.85, 0.02), V(0.07, -0.80, 0.04), V(0.10, 0.35, 0.02), V(0.12, 1.52, 0.00), V(0.09, 2.35, -0.02)];
+    const trunkWidths = [0.28, 0.24, 0.20, 0.16, 0.12];
     for (let i = 1; i < trunk.length; i++) {
-      const width = 0.17 - i * 0.018;
-      line(trunk[i - 1], trunk[i], width, i < 3 ? '#7a5d3e' : '#8a6845');
+      line(trunk[i - 1], trunk[i], trunkWidths[i - 1], i < 3 ? '#715235' : '#825f3e');
     }
-    // subtle secondary stems
+
+    // galhos principais, mas com copa menos carregada
     const stemBases = [
-      [2, V(-0.55, 0.25, 0.18), 1.8, 4, 0.085],
-      [2, V(0.62, 0.45, -0.12), 1.7, 4, 0.080],
-      [3, V(-0.95, 1.05, 0.14), 1.45, 3, 0.068],
-      [3, V(0.82, 1.20, -0.08), 1.55, 3, 0.070],
-      [4, V(-0.35, 2.05, 0.16), 1.15, 2, 0.050],
-      [4, V(0.42, 2.10, -0.10), 1.12, 2, 0.050]
+      [2, V(-0.52, 0.28, 0.16), 1.55, 4, 0.11],
+      [2, V(0.60, 0.48, -0.10), 1.50, 4, 0.108],
+      [3, V(-0.88, 1.00, 0.12), 1.25, 3, 0.084],
+      [3, V(0.78, 1.16, -0.08), 1.30, 3, 0.084],
+      [4, V(-0.28, 1.96, 0.12), 0.95, 2, 0.060],
+      [4, V(0.36, 2.02, -0.08), 0.95, 2, 0.060]
     ];
     for (const [idx, dirV, len, depth, thick] of stemBases) {
       growBranch(trunk[idx], sub(dirV, trunk[idx]), len, depth, thick);
     }
-    // low branches and hanging foliage
-    growBranch(V(-0.12, -0.45, 0.10), V(-0.72, -0.20, 0.28), 1.45, 3, 0.058);
-    growBranch(V(0.16, -0.28, -0.06), V(0.78, -0.08, -0.24), 1.38, 3, 0.056);
 
-    // extra drooping leaf curtains around canopy for eucalyptus feel
+    // poucos galhos laterais baixos
+    growBranch(V(-0.15, -0.30, 0.10), V(-0.70, -0.08, 0.22), 1.08, 2, 0.070);
+    growBranch(V(0.18, -0.20, -0.05), V(0.74, 0.02, -0.22), 1.02, 2, 0.070);
+
+    // poucas cortinas de folhas pendentes para aliviar o processamento
     const curtains = [
-      V(-0.92, 0.85, 0.28), V(-0.55, 1.35, -0.10), V(0.62, 0.95, 0.12), V(0.92, 1.55, -0.05),
-      V(-0.18, 2.05, 0.10), V(0.22, 2.18, -0.08), V(-0.82, -0.10, 0.18), V(0.75, 0.15, -0.18)
+      V(-0.76, 0.92, 0.22), V(0.62, 0.98, 0.10), V(-0.08, 1.92, 0.06), V(0.20, 2.00, -0.06),
+      V(-0.62, -0.02, 0.15), V(0.58, 0.10, -0.12)
     ];
     curtains.forEach((p, idx) => {
-      for (let i = 0; i < 5; i++) {
-        const base = add(p, V(jitter(0.18), jitter(0.10), jitter(0.12)));
-        const tip = add(base, V(jitter(0.55), -0.85 - rnd() * 0.45, jitter(0.18)));
-        buildLeafShapes(shapes, base, tip, 0.055 + rnd() * 0.02, idx + i, (i % 2 ? -1 : 1) * (0.05 + rnd() * 0.06));
-        line(base, mix(base, tip, 0.14), 0.0035, '#c0ab61');
+      for (let i = 0; i < 2; i++) {
+        const base = add(p, V(jitter(0.12), jitter(0.08), jitter(0.08)));
+        const tip = add(base, V(jitter(0.32), -0.62 - rnd() * 0.28, jitter(0.12)));
+        buildLeafShapes(shapes, base, tip, 0.048 + rnd() * 0.012, idx + i, (i % 2 ? -1 : 1) * (0.03 + rnd() * 0.04));
+        line(base, mix(base, tip, 0.13), 0.003, '#c0ab61');
       }
     });
 
@@ -235,7 +241,7 @@
       shapes,
       defaults: { yaw: -0.40, pitch: -0.08, zoom: 0.93 },
       zoomRange: [0.52, 1.55],
-      ariaLabel: 'Modelo 3D estilizado de uma árvore de eucalipto, com tronco alto, copa irregular e folhas alongadas. Arraste para girar.'
+      ariaLabel: 'Modelo 3D estilizado de uma árvore de eucalipto, com tronco mais grosso e copa mais leve para melhor desempenho. Arraste para girar.'
     };
   }
 
