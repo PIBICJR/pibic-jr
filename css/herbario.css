@@ -210,3 +210,50 @@ h1 em,h2 em { font-family:Georgia,serif; font-weight:400; color:var(--green); }
 #treeReference img { object-position:center center; }
 .reference-stack .eucalyptus-reference:not(.is-active) figcaption { opacity:.7; }
 @media(max-width:750px){ .model-switcher { grid-template-columns:1fr; } }
+
+/* Seletor visível SOBRE o visualizador de Eucalipto */
+.model-stage .model-switcher {
+  position:absolute;
+  top:70px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:8;
+  display:flex;
+  grid-template-columns:none;
+  width:max-content;
+  max-width:calc(100% - 24px);
+  padding:6px;
+  gap:6px;
+  margin:0;
+  border-radius:15px;
+  border:1px solid rgba(153,228,168,.36);
+  background:rgba(6,29,17,.88);
+  box-shadow:0 12px 38px rgba(0,0,0,.28);
+  backdrop-filter:blur(14px);
+}
+.model-stage .model-switch {
+  min-width:116px;
+  padding:12px 17px;
+  border-radius:11px;
+  border:1px solid transparent;
+  background:transparent;
+  color:#d0edd6;
+  cursor:pointer;
+  font:800 11px 'DM Sans',sans-serif;
+  letter-spacing:1.2px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.model-stage .model-switch.active {
+  background:#8de8a6;
+  color:#082717;
+  border-color:#b5f9c5;
+  box-shadow:0 0 20px rgba(103,222,143,.22);
+}
+.model-stage .model-switch:focus-visible { outline:3px solid #fff; outline-offset:2px; }
+:root[data-theme="light"] .model-stage .model-switcher { background:rgba(247,252,246,.93); border-color:#8eba9b; }
+:root[data-theme="light"] .model-stage .model-switch { color:#214a30; }
+:root[data-theme="light"] .model-stage .model-switch.active { background:#237b49; color:#fff; border-color:#237b49; }
+@media (max-width:750px) {
+ .model-stage .model-switcher { top:60px; width:max-content; display:flex; }
+ .model-stage .model-switch { min-width:100px; padding:11px 12px; font-size:10px; }
+}
