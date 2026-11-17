@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 760" role="img" aria-label="Ilustração botânica estilizada de um ramo de eucalipto">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#244c38"/><stop offset="1" stop-color="#091e19"/></linearGradient><linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b1d7b9"/><stop offset=".52" stop-color="#6d9f8c"/><stop offset="1" stop-color="#2d6456"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="16"/></filter></defs>
+<rect width="720" height="760" fill="url(#bg)"/>
+<ellipse cx="365" cy="610" rx="230" ry="78" fill="#55c08e" opacity=".11" filter="url(#glow)"/>
+<g fill="none" stroke="#b6a27c" stroke-linecap="round"><path d="M350 696 Q361 410 332 153" stroke-width="9"/><path d="M356 612 Q460 471 534 316" stroke-width="5"/><path d="M345 535 Q242 389 154 271" stroke-width="5"/><path d="M348 451 Q434 312 460 179" stroke-width="3"/><path d="M342 359 Q250 258 220 145" stroke-width="3"/></g>
+<g fill="url(#leaf)" stroke="#b7d4bb" stroke-width="2" opacity=".94">
+<path d="M357 610 Q413 514 483 525 Q460 595 357 610Z"/><path d="M355 583 Q275 505 210 510 Q239 564 355 583Z"/>
+<path d="M371 520 Q392 426 460 378 Q458 455 371 520Z"/><path d="M349 484 Q247 441 215 378 Q276 394 349 484Z"/>
+<path d="M389 438 Q466 331 528 315 Q501 389 389 438Z"/><path d="M315 424 Q222 331 163 307 Q177 380 315 424Z"/>
+<path d="M347 349 Q412 252 450 233 Q438 292 347 349Z"/><path d="M337 326 Q260 267 210 216 Q223 292 337 326Z"/>
+<path d="M337 247 Q389 155 413 133 Q407 203 337 247Z"/><path d="M330 236 Q270 161 257 103 Q287 124 330 236Z"/>
+<path d="M467 446 Q561 396 597 415 Q565 465 467 446Z"/><path d="M482 401 Q521 307 594 285 Q584 362 482 401Z"/>
+<path d="M268 393 Q193 357 117 370 Q172 405 268 393Z"/><path d="M246 340 Q201 252 124 235 Q148 314 246 340Z"/>
+</g>
+<g fill="#9cbea9" stroke="#5c8473" stroke-width="5"><path d="M325 574 q-32 36 0 57 q35-15 0-57Z"/><path d="M315 585 l21 0"/><path d="M399 576 q-25 32 2 48 q28-12-2-48Z"/><path d="M385 592 l28 0"/><path d="M378 614 q-23 27 1 43 q26-13-1-43Z"/></g>
+<text x="48" y="66" fill="#bad6c4" font-family="Georgia,serif" font-size="20" letter-spacing="5">HERBARIUM / 002</text>
+<text x="48" y="720" fill="#d8ecde" font-family="Georgia,serif" font-size="25" font-style="italic">Eucalyptus globulus</text>
+</svg>
