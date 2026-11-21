@@ -2,6 +2,7 @@
     --bg:#06130d;
     --surface:#10271a;
     --green:#b8f16c;
+    --text-green:#a5f3af;
     --muted:#a3b7a7;
     --line:#ffffff20;
     --mx:50%;
@@ -88,7 +89,7 @@ header {
     border-radius:50%;
     display:grid;
     place-items:center;
-    color:var(--green);
+    color:var(--text-green);
     font-size:24px
 }
 
@@ -107,7 +108,7 @@ nav {
 }
 
 nav a:hover {
-    color:var(--green)
+    color:var(--text-green)
 }
 
 .nav-btn,.button {
@@ -195,7 +196,7 @@ nav a:hover {
     display:inline-flex;
     align-items:center;
     gap:12px;
-    color:var(--green);
+    color:var(--text-green);
     text-transform:uppercase;
     font-size:11px;
     font-weight:800;
@@ -228,7 +229,7 @@ h1 {
     font-family:Georgia,serif;
     font-style:italic;
     font-weight:400;
-    color:var(--green)
+    color:var(--text-green)
 }
 
 .hero p {
@@ -302,7 +303,7 @@ h1 {
 .outline {
     font-family:Georgia,serif;
     font-style:italic;
-    color:var(--green)
+    color:var(--text-green)
 }
 
 .stats {
@@ -325,7 +326,7 @@ h1 {
     display:block;
     font:700 clamp(38px,5vw,65px) Manrope;
     letter-spacing:-.08em;
-    color:var(--green)
+    color:var(--text-green)
 }
 
 .stat span {
@@ -375,7 +376,7 @@ h1 {
 }
 
 .card-index {
-    color:var(--green);
+    color:var(--text-green);
     font-size:12px;
     letter-spacing:.2em
 }
@@ -458,7 +459,7 @@ h1 {
 }
 
 .step span {
-    color:var(--green);
+    color:var(--text-green);
     font-size:12px
 }
 
